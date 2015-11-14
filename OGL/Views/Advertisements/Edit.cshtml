@@ -1,0 +1,68 @@
+﻿@model Repository.Models.Advertisement
+
+@{
+    ViewBag.Title = "Edit " + Model.Id;
+    ViewBag.Description = "Edit " + Model.Id;
+
+}
+
+<h2>Edit</h2>
+
+@if(ViewBag.error == true)
+{
+    <div class="alert alert-danger" role="alert">
+        Wystąpił bład! Spróbuj ponownie.
+    </div>
+}
+else if(ViewBag.error == false)
+{
+    <div class="alert alert-success" role="alert">
+        Pomyślnie zeedytowano
+
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Advertisement</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AdvertisementText, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AdvertisementText, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdvertisementText, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AdvertistmentTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AdvertistmentTitle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AdvertistmentTitle, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @Html.HiddenFor(m => m.PublishDate)
+        @Html.HiddenFor(m => m.UserID)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

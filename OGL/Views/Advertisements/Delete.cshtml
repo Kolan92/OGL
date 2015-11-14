@@ -1,0 +1,69 @@
+﻿@model Repository.Models.Advertisement
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+@if (ViewBag.error == true)
+{
+    <div class="alert alert-danger" role="alert">
+        Błąd podczas usuwania. Sprubuj ponownie.
+    </div>
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Advertisement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUser.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdvertisementText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdvertisementText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdvertistmentTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdvertistmentTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublishDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger confirmation" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        $('.confirmation').on('click', function(){
+            return confirm('Czy na pewno chcesz usunąć?');
+        });
+    </script>
+}

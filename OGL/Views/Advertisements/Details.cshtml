@@ -1,0 +1,50 @@
+﻿@model Repository.Models.Advertisement
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Advertisement</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUser.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUser.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdvertisementText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdvertisementText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdvertistmentTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdvertistmentTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublishDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublishDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
