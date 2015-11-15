@@ -1,4 +1,4 @@
-namespace Repository.Migrations
+﻿namespace Repository.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -33,17 +33,20 @@ namespace Repository.Migrations
 
         private void SeedAdvertistmentCategory(ApplicationDbContext context)
         {
-            for (int i = 0; i < 10; i++)
+            if (context.AdvertistmentCategory.Count() ==0)
             {
-                var advertistmentCategory = new AdvertistmentCategory()
+                for (int i = 0; i < 10; i++)
                 {
-                    Id = i,
-                    AdvertistmentId = i / 2 + 1,
-                    CategoryId = i / 2 + 2
-                };
-                context.Set<AdvertistmentCategory>().AddOrUpdate(advertistmentCategory);
+                    var advertistmentCategory = new AdvertistmentCategory()
+                    {
+                        Id = i,
+                        AdvertistmentId = i / 2 + 1,
+                        CategoryId = i / 2 + 2
+                    };
+                    context.Set<AdvertistmentCategory>().AddOrUpdate(advertistmentCategory);
+                }
+                context.SaveChanges();
             }
-            context.SaveChanges();
         }
 
         private void SeedCategory(ApplicationDbContext context)
@@ -91,13 +94,23 @@ namespace Repository.Migrations
             var store = new UserStore<ApplicationUser>(context);
             var manager = new UserManager<ApplicationUser>(store);
 
-            if (!context.Users.Any(u => u.UserName == "Admin"))
+            if (true)
             {
-                var user = new ApplicationUser { UserName = "Admin", Age = 22 };
-                var adminresult = manager.Create(user, "123456789");
+                var user = new ApplicationUser { UserName = "Admin@gmail.com" };
+                var adminresult = manager.Create(user, "1234Abc.");
 
                 if (adminresult.Succeeded)
                     manager.AddToRole(user.Id, "Admin");
+            }
+            if(true)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    var user = new ApplicationUser { UserName = string.Format("User{0}@gmail.com", i.ToString()) };
+                    var adminResult = manager.Create(user, "1234Abc.");
+                    if (adminResult.Succeeded)
+                        manager.AddToRole(user.Id, "Worker");
+                }
             }
         }
 
@@ -108,6 +121,12 @@ namespace Repository.Migrations
             {
                 var role = new IdentityRole();
                 role.Name = "Admin";
+                roleManager.Create(role);
+            }
+            if(!roleManager.RoleExists("Worker"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Worker";
                 roleManager.Create(role);
             }
         }
