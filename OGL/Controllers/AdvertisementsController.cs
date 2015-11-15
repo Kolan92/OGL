@@ -164,7 +164,7 @@ namespace OGL.Controllers
         {
             var advertistments = _repo.GetAdvertistments();
             return PartialView("Index", advertistments);
-            // lol///
+            // lol///jdghj
         }
 
         //protected override void Dispose(bool disposing)
