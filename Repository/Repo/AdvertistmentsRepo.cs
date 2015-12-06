@@ -63,5 +63,14 @@ namespace Repository.Repo
                 _db.AdvertistmentCategory.Remove(advertistmentCategory);
             }
         }
+
+        public IQueryable<Advertisement> RetrivePage(int? page = 1, int? pageSize = 10)
+        {
+            var advertistements = _db.Advertistments
+                                    .OrderByDescending(a => a.PublishDate)
+                                      .Skip((page.Value - 1) * pageSize.Value)
+                                        .Take(pageSize.Value);
+            return advertistements;
+        }
     }
 }

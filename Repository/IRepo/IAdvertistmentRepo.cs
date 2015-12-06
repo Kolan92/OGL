@@ -15,6 +15,6 @@ namespace Repository.IRepo
         void SaveChanges();
         void Create(Advertisement advertistment);
         void UpdateAdvertistment(Advertisement advertistmetn);
-
+        IQueryable<Advertisement> RetrivePage(int? page = 1, int? pageSize = 10);
     }
 }

@@ -22,10 +22,12 @@ namespace OGL.Controllers
         }
 
         // GET: Advertisements
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
             //db.Database.Log = message => Trace.WriteLine(message);
-            var advertistments = _repo.GetAdvertistments();
+            int currentPage = page ?? 1;
+            int advertistmentsPerPage = 5;
+            var advertistments = _repo.RetrivePage(currentPage, advertistmentsPerPage);
             return View(advertistments);
         }
 
