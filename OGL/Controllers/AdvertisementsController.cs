@@ -82,6 +82,7 @@ namespace OGL.Controllers
         }
 
         // GET: Advertisements/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -92,6 +93,11 @@ namespace OGL.Controllers
             if (advertisement == null)
             {
                 return HttpNotFound();
+            }
+            else if (advertisement.UserID != User.Identity.GetUserId() &&
+                !(User.IsInRole("Admin")||User.IsInRole("Worker")))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             return View(advertisement);
         }
@@ -133,6 +139,11 @@ namespace OGL.Controllers
             if (advertisement == null)
             {
                 return HttpNotFound();
+            }
+            else if (advertisement.UserID != User.Identity.GetUserId() &&
+                        !User.IsInRole("Admin"))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             if(error!=null)
             {

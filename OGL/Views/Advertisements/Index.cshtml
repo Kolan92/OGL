@@ -41,9 +41,15 @@
             @Html.DisplayFor(modelItem => item.PublishDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
-            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary" })
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-warning" })
+            @if(User.Identity.IsAuthenticated && (User.IsInRole("Admin")||User.IsInRole("Worker")))
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id},  new { @class = "btn btn-primary" })
+                if (User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                }
+            }
         </td>
     </tr>
 }
