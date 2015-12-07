@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Repository.Models.Advertisement>
+﻿@using System.Web.Mvc.Html;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Repository.Models.Advertistment>
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css"/>
 
 @{
     ViewBag.Title = "Index";
@@ -12,16 +15,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserID)
+            @Html.DisplayNameFor(model => model[0].UserID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AdvertisementText)
+            @Html.DisplayNameFor(model => model[0].AdvertisementText)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AdvertistmentTitle)
+            @Html.DisplayNameFor(model => model[0].AdvertistmentTitle)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PublishDate)
+            @Html.DisplayNameFor(model => model[0].PublishDate)
         </th>
         <th></th>
     </tr>
@@ -55,3 +58,9 @@
 }
 
 </table>
+
+    <div>
+        <br />
+        Strona@(Model.PageCount<Model.PageNumber ? 0 : Model.PageNumber) z @Model.PageCount
+        @Html.PagedListPager(Model , page => Url.Action("Index"), new{page}))
+    </div>

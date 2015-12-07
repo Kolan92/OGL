@@ -172,3 +172,7 @@ C:\Users\Pawel\Source\Repos\OGL\OGL\bin\System.Web.Optimization.xml
 C:\Users\Pawel\Source\Repos\OGL\OGL\obj\Debug\OGL.csprojResolveAssemblyReference.cache
 C:\Users\Pawel\Source\Repos\OGL\OGL\obj\Debug\OGL.dll
 C:\Users\Pawel\Source\Repos\OGL\OGL\obj\Debug\OGL.pdb
+C:\Users\Pawel\Source\Repos\OGL\OGL\bin\PagedList.dll
+C:\Users\Pawel\Source\Repos\OGL\OGL\bin\PagedList.Mvc.dll
+C:\Users\Pawel\Source\Repos\OGL\OGL\bin\PagedList.xml
+C:\Users\Pawel\Source\Repos\OGL\OGL\bin\PagedList.Mvc.xml

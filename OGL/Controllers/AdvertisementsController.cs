@@ -10,6 +10,7 @@ using Repository.Models;
 using System.Diagnostics;
 using Repository.IRepo;
 using Microsoft.AspNet.Identity;
+using PagedList;
 
 namespace OGL.Controllers
 {
@@ -26,9 +27,11 @@ namespace OGL.Controllers
         {
             //db.Database.Log = message => Trace.WriteLine(message);
             int currentPage = page ?? 1;
-            int advertistmentsPerPage = 5;
-            var advertistments = _repo.RetrivePage(currentPage, advertistmentsPerPage);
-            return View(advertistments);
+            int advertistmentsPerPage = 3;
+            var advertistments = _repo.GetAdvertistments().OrderByDescending(d => d.PublishDate);
+
+
+            return View(advertistments.ToPagedList<Advertisement>(currentPage, advertistmentsPerPage));
         }
 
 
