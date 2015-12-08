@@ -123,6 +123,8 @@ C:\Users\Pawel\Source\Repos\OGL\OGL\bin\Microsoft.Practices.Unity.RegistrationBy
 C:\Users\Pawel\Source\Repos\OGL\OGL\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Pawel\Source\Repos\OGL\OGL\bin\Newtonsoft.Json.dll
 C:\Users\Pawel\Source\Repos\OGL\OGL\bin\Owin.dll
+C:\Users\Pawel\Source\Repos\OGL\OGL\bin\PagedList.dll
+C:\Users\Pawel\Source\Repos\OGL\OGL\bin\PagedList.Mvc.dll
 C:\Users\Pawel\Source\Repos\OGL\OGL\bin\Repository.dll
 C:\Users\Pawel\Source\Repos\OGL\OGL\bin\System.Net.Http.Formatting.dll
 C:\Users\Pawel\Source\Repos\OGL\OGL\bin\System.Web.Helpers.dll
@@ -159,6 +161,8 @@ C:\Users\Pawel\Source\Repos\OGL\OGL\bin\Microsoft.Practices.Unity.Configuration.
 C:\Users\Pawel\Source\Repos\OGL\OGL\bin\Microsoft.Practices.Unity.Mvc.xml
 C:\Users\Pawel\Source\Repos\OGL\OGL\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
 C:\Users\Pawel\Source\Repos\OGL\OGL\bin\Newtonsoft.Json.xml
+C:\Users\Pawel\Source\Repos\OGL\OGL\bin\PagedList.xml
+C:\Users\Pawel\Source\Repos\OGL\OGL\bin\PagedList.Mvc.xml
 C:\Users\Pawel\Source\Repos\OGL\OGL\bin\System.Net.Http.Formatting.xml
 C:\Users\Pawel\Source\Repos\OGL\OGL\bin\System.Web.Helpers.xml
 C:\Users\Pawel\Source\Repos\OGL\OGL\bin\System.Web.Http.xml
@@ -172,7 +176,3 @@ C:\Users\Pawel\Source\Repos\OGL\OGL\bin\System.Web.Optimization.xml
 C:\Users\Pawel\Source\Repos\OGL\OGL\obj\Debug\OGL.csprojResolveAssemblyReference.cache
 C:\Users\Pawel\Source\Repos\OGL\OGL\obj\Debug\OGL.dll
 C:\Users\Pawel\Source\Repos\OGL\OGL\obj\Debug\OGL.pdb
-C:\Users\Pawel\Source\Repos\OGL\OGL\bin\PagedList.dll
-C:\Users\Pawel\Source\Repos\OGL\OGL\bin\PagedList.Mvc.dll
-C:\Users\Pawel\Source\Repos\OGL\OGL\bin\PagedList.xml
-C:\Users\Pawel\Source\Repos\OGL\OGL\bin\PagedList.Mvc.xml

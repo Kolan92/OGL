@@ -14,10 +14,10 @@ using PagedList;
 
 namespace OGL.Controllers
 {
-    public class AdvertisementsController : Controller
+    public class AdvertisementController : Controller
     {
         private readonly IAdvertistmentRepo _repo;
-        public AdvertisementsController(IAdvertistmentRepo repo)
+        public AdvertisementController(IAdvertistmentRepo repo)
         {
             this._repo = repo;
         }
@@ -29,8 +29,9 @@ namespace OGL.Controllers
             int currentPage = page ?? 1;
             int advertistmentsPerPage = 3;
             var advertistments = _repo.GetAdvertistments().OrderByDescending(d => d.PublishDate);
+            PagedList<Advertisement> model = new PagedList<Advertisement>(advertistments, currentPage, advertistmentsPerPage);
 
-
+            return View(model);
             return View(advertistments.ToPagedList<Advertisement>(currentPage, advertistmentsPerPage));
         }
 
