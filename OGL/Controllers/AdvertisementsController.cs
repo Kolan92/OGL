@@ -23,16 +23,45 @@ namespace OGL.Controllers
         }
 
         // GET: Advertisements
-        public ActionResult Index(int? page)
+        public ActionResult Index(int? page, string sortOrder)
         {
-            //db.Database.Log = message => Trace.WriteLine(message);
             int currentPage = page ?? 1;
             int advertistmentsPerPage = 3;
-            var advertistments = _repo.GetAdvertistments().OrderByDescending(d => d.PublishDate);
-            PagedList<Advertisement> model = new PagedList<Advertisement>(advertistments, currentPage, advertistmentsPerPage);
+
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.SortId = string.IsNullOrEmpty(sortOrder) ? "IdAsc" : string.Empty;
+            ViewBag.Date = sortOrder == "DateAsc" ? "Date" : "DateAsc";
+            ViewBag.TextSort = sortOrder == "TextAsc" ? "Text" : "TextAsc";
+            ViewBag.TitleSort = sortOrder == "TitleAsc" ? "Title" : "TitleAsc";
+            var advertistments = GetAdvertistmentsBySortType(sortOrder);
+
+            var model = new PagedList<Advertisement>(advertistments, currentPage, advertistmentsPerPage);
 
             return View(model);
-            return View(advertistments.ToPagedList<Advertisement>(currentPage, advertistmentsPerPage));
+        }
+
+        private IEnumerable<Advertisement>GetAdvertistmentsBySortType(string sortOrder)
+        {
+            var advertistments = _repo.GetAdvertistments();
+            switch (sortOrder)
+            {
+                case"Date":
+                    return advertistments.OrderBy(x => x.PublishDate);
+                case "DateAsc":
+                    return advertistments.OrderByDescending(x => x.PublishDate);
+                case "Text":
+                    return advertistments.OrderBy(x => x.AdvertisementText);
+                case "TextAsc":
+                    return advertistments.OrderByDescending(x => x.AdvertisementText);
+                case "Title":
+                    return advertistments.OrderBy(x => x.AdvertistmentTitle);
+                case "TitleAsc":
+                    return advertistments.OrderByDescending(x => x.AdvertistmentTitle);
+                case "IdAsc":
+                    return advertistments.OrderBy(x => x.Id);
+                default:
+                    return advertistments.OrderByDescending(x => x.Id);
+            }
         }
 
 
