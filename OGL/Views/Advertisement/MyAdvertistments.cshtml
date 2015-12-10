@@ -1,7 +1,5 @@
-﻿
-
-@model PagedList.IPagedList<Repository.Models.Advertisement>
-@using PagedList.Mvc;
+﻿@model PagedList.IPagedList<Repository.Models.Advertisement>
+    @using PagedList.Mvc;
 
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
@@ -65,5 +63,5 @@
     <div>
         <br />
         Strona @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) z @Model.PageCount
-        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort }))
+        @Html.PagedListPager(Model, page => Url.Action("MyAdvertistments", new { page}))
     </div>

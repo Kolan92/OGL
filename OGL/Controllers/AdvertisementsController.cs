@@ -40,6 +40,19 @@ namespace OGL.Controllers
             return View(model);
         }
 
+        [OutputCache(Duration=1000)]
+        public ActionResult MyAdvertistments(int?page)
+        {
+            int currentPage = page ?? 1;
+            int advertistmentsPerPage = 3;
+            var advertistmnets = _repo.GetAdvertistments();
+            string userID = User.Identity.GetUserId();
+            advertistmnets = advertistmnets.OrderBy(x => x.PublishDate).Where(u => u.UserID == userID);
+
+            var model = new PagedList<Advertisement>(advertistmnets, currentPage, advertistmentsPerPage);
+            return View(model);
+        }
+
         private IEnumerable<Advertisement>GetAdvertistmentsBySortType(string sortOrder)
         {
             var advertistments = _repo.GetAdvertistments();
@@ -104,7 +117,7 @@ namespace OGL.Controllers
                 {
                     _repo.Create(advertisement);
                     _repo.SaveChanges();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("MyAdvertistments");
                 }
                 catch (Exception)
                 {
