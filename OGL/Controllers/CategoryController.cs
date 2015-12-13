@@ -37,5 +37,12 @@ namespace OGL.Controllers
             model.CategoryName = _repo.GetCategoryNameById(id);
             return View(model);
         }
+
+        [Route("JSON")]
+        public ActionResult GetCategoriesInJSon()
+        {
+            var categories = _repo.GetCategories().AsNoTracking();
+            return Json(categories, JsonRequestBehavior.AllowGet);
+        }
     }
 }
