@@ -82,6 +82,7 @@ C:\Users\Pawel\Source\Repos\OGL\Repository\bin\System.Web.Razor.xml
 C:\Users\Pawel\Source\Repos\OGL\Repository\bin\System.Web.WebPages.xml
 C:\Users\Pawel\Source\Repos\OGL\Repository\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Pawel\Source\Repos\OGL\Repository\bin\System.Web.WebPages.Razor.xml
+C:\Users\Pawel\Source\Repos\OGL\Repository\obj\Debug\Repository.csprojResolveAssemblyReference.cache
 C:\Users\Pawel\Source\Repos\OGL\Repository\obj\Debug\Repository.Migrations.Init.resources
 C:\Users\Pawel\Source\Repos\OGL\Repository\obj\Debug\Repository.Migrations.user_age.resources
 C:\Users\Pawel\Source\Repos\OGL\Repository\obj\Debug\Repository.Migrations.user_age2.resources

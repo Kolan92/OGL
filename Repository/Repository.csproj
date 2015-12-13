@@ -126,6 +126,7 @@
   <ItemGroup>
     <Compile Include="IRepo\IAdvertistmentRepo.cs" />
     <Compile Include="IRepo\IApplicationDbContext.cs" />
+    <Compile Include="IRepo\ICategoryRepo.cs" />
     <Compile Include="Migrations\201511010936154_Init.cs" />
     <Compile Include="Migrations\201511010936154_Init.Designer.cs">
       <DependentUpon>201511010936154_Init.cs</DependentUpon>
@@ -146,11 +147,13 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advertisement.cs" />
     <Compile Include="Models\AdvertistmentCategory.cs" />
+    <Compile Include="Models\AdvertistmentsFromCategoryViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\AdvertistmentsRepo.cs" />
+    <Compile Include="Repo\CategoryRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511010936154_Init.resx">

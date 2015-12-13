@@ -41,7 +41,7 @@ namespace OGL.Controllers
         }
 
         [OutputCache(Duration=1000)]
-        public ActionResult MyAdvertistments(int?page)
+        public ActionResult MyAdvertistments(int? page)
         {
             int currentPage = page ?? 1;
             int advertistmentsPerPage = 3;

@@ -44,6 +44,7 @@ namespace OGL.App_Start
             container.RegisterType<AccountController>(new InjectionConstructor());
             container.RegisterType<ManageController>(new InjectionConstructor());
             container.RegisterType<IAdvertistmentRepo, AdvertistmentsRepo>(new PerRequestLifetimeManager());
+            container.RegisterType<ICategoryRepo, CategoryRepo>(new PerRequestLifetimeManager());
             container.RegisterType<IApplicationDbContext, ApplicationDbContext>(new PerRequestLifetimeManager());
         }
     }
