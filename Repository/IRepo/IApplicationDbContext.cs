@@ -15,6 +15,7 @@ namespace Repository.IRepo
         DbSet<Advertisement> Advertistments { get; set; }
         DbSet<ApplicationUser> ApplicationUsers { get; set; }
         DbSet<AdvertistmentCategory> AdvertistmentCategory { get; set; }
+        DbSet<Image> Images { get; set; }
         DbEntityEntry Entry(object entity);
 
         int SaveChanges();

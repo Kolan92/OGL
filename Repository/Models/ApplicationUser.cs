@@ -13,10 +13,6 @@ namespace Repository.Models
 {
     public class ApplicationUser : IdentityUser
     {
-        public ApplicationUser()
-        {
-            this.Advertistments = new HashSet<Advertisement>();
-        }
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -33,7 +29,15 @@ namespace Repository.Models
         }
 
         #endregion
+
         public virtual ICollection<Advertisement> Advertistments { get; set; }
+        public virtual ICollection<Image> Images { get; private set; }
+
+        public ApplicationUser()
+        {
+            this.Advertistments = new HashSet<Advertisement>();
+            this.Images = new HashSet<Image>();
+        }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

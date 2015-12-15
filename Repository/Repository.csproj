@@ -127,6 +127,7 @@
     <Compile Include="IRepo\IAdvertistmentRepo.cs" />
     <Compile Include="IRepo\IApplicationDbContext.cs" />
     <Compile Include="IRepo\ICategoryRepo.cs" />
+    <Compile Include="IRepo\IImageRepo.cs" />
     <Compile Include="Migrations\201511010936154_Init.cs" />
     <Compile Include="Migrations\201511010936154_Init.Designer.cs">
       <DependentUpon>201511010936154_Init.cs</DependentUpon>
@@ -143,6 +144,10 @@
     <Compile Include="Migrations\201511011412146_user_midle_name.Designer.cs">
       <DependentUpon>201511011412146_user_midle_name.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512152012017_images.cs" />
+    <Compile Include="Migrations\201512152012017_images.Designer.cs">
+      <DependentUpon>201512152012017_images.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Advertisement.cs" />
@@ -151,9 +156,11 @@
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Image.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repo\AdvertistmentsRepo.cs" />
     <Compile Include="Repo\CategoryRepo.cs" />
+    <Compile Include="Repo\ImageRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201511010936154_Init.resx">
@@ -167,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511011412146_user_midle_name.resx">
       <DependentUpon>201511011412146_user_midle_name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512152012017_images.resx">
+      <DependentUpon>201512152012017_images.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -44,5 +44,10 @@ namespace OGL.Controllers
             var categories = _repo.GetCategories().AsNoTracking();
             return Json(categories, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult CotegoryList()
+        {
+            return View();
+        }
     }
 }

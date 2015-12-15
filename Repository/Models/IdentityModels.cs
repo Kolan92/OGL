@@ -26,6 +26,7 @@ namespace Repository.Models
         public DbSet<Advertisement> Advertistments { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<AdvertistmentCategory> AdvertistmentCategory { get; set; }
+        public DbSet<Image> Images { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

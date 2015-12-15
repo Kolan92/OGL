@@ -90,3 +90,4 @@ C:\Users\Pawel\Source\Repos\OGL\Repository\obj\Debug\Repository.Migrations.user_
 C:\Users\Pawel\Source\Repos\OGL\Repository\obj\Debug\Repository.csproj.GenerateResource.Cache
 C:\Users\Pawel\Source\Repos\OGL\Repository\obj\Debug\Repository.dll
 C:\Users\Pawel\Source\Repos\OGL\Repository\obj\Debug\Repository.pdb
+C:\Users\Pawel\Source\Repos\OGL\Repository\obj\Debug\Repository.Migrations.images.resources

@@ -8,7 +8,7 @@
     }
 
     <h2>Lista moich ogłoszeń</h2>
-    <br />@
+    <br />@Html.ActionLink()
 
     <p>
         @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
@@ -54,7 +54,8 @@
                         {
                             @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
                         }
-                    }
+                        @*<br />@Html.ActionLink("Dodaj kategorie ", "DodajKategorie", new { id = item.Id }, new { @class = "btn btn-success" })
+                    }*@
                 </td>
             </tr>
         }
