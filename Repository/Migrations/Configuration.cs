@@ -94,15 +94,15 @@
             var store = new UserStore<ApplicationUser>(context);
             var manager = new UserManager<ApplicationUser>(store);
 
-            if (true)
+            if (!context.Users.Any(u => u.UserName == "Admin"))
             {
-                var user = new ApplicationUser { UserName = "Admin@gmail.com" };
+                var user = new ApplicationUser { UserName = "Admin" };
                 var adminresult = manager.Create(user, "1234Abc.");
 
                 if (adminresult.Succeeded)
                     manager.AddToRole(user.Id, "Admin");
             }
-            if(true)
+            if (!context.Users.Any(u => u.UserName.StartsWith("User")))
             {
                 for (int i = 0; i < 10; i++)
                 {
