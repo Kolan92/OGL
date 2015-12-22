@@ -1,4 +1,4 @@
-﻿enum ImageExtension
+﻿public enum ImageExtension
 {
     bmp,
     jpeg,

@@ -13,7 +13,8 @@ namespace Services
             using (MemoryStream ms = new MemoryStream())
             {
                 input.CopyTo(ms);
-                return ms.ToArray();
+                byte[] bytes = ms.ToArray();
+                return bytes;
             }
         }
     }

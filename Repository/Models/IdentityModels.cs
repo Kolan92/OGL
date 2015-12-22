@@ -34,8 +34,8 @@ namespace Repository.Models
 
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-            modelBuilder.Entity<Advertisement>().HasRequired
-                                                    (x => x.ApplicationUser).WithMany(x => x.Advertistments)
+            modelBuilder.Entity<Advertisement>().HasRequired(x => x.ApplicationUser)
+                                                    .WithMany(x => x.Advertistments)
                                                     .HasForeignKey(x => x.UserID)
                                                     .WillCascadeOnDelete(true);
 
